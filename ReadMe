@@ -1,0 +1,47 @@
+Arbitrary Dataset Analysis
+GitHub repo size
+GitHub stars
+GitHub forks
+
+This repository contains a MATLAB script for analyzing an arbitrary dataset consisting of two sets of data: x_1, x_2, y_1, and y_2. The script combines both datasets and performs various processing steps, including data interpolation, extrapolation, smoothing, and visualization. The primary goal is to analyze and visualize the distribution of two parameters, A and B, on a custom shape defined by boundary points x_boundaries_1, x_boundaries_2, y_boundaries_1, and y_boundaries_2.
+
+Table of Contents
+Prerequisites
+Instructions
+Smoothing Options
+Output
+Additional Notes
+Contributing
+License
+Acknowledgments
+
+Prerequisites
+MATLAB software installed on your computer.
+The arbitrary dataset file named arbitrary_dataset.mat must be available in the working directory or should be properly loaded before running the script.
+Instructions
+Clone this repository to your local machine or download the arbitrary_dataset_analysis.m script.
+Ensure you have MATLAB installed on your computer and accessible from the command line or MATLAB environment.
+Make sure to have the arbitrary_dataset.mat file available in the same directory or load it before running the script to access the required datasets and boundary points.
+Customize the smoothing options and filter parameters according to your preference by modifying the respective variables in the script. You can select the smoothing filter and adjust its parameters to suit your data and analysis needs.
+You can choose to apply a logarithmic transformation to the data by setting the use_log_transform variable to true or false as desired.
+Optionally, adjust the number of contour levels for visualization and the number of 'jet' colors used in the colormap.
+Run the MATLAB script to perform the data analysis, smoothing, and visualization.
+Smoothing Options
+You can choose from the following smoothing filters and adjust their respective parameters:
+
+Gaussian filter: sigma_gaussian controls the smoothing strength.
+Median filter: window_size_median sets the window size for median filtering.
+Mean filter: window_size_mean sets the window size for mean filtering.
+Bilateral filter: sigma_spatial_bilateral and sigma_intensity_bilateral control spatial and intensity smoothing for bilateral filtering.
+Savitzky-Golay filter: poly_order_savitzky sets the polynomial order, and frame_size_savitzky defines the frame size for Savitzky-Golay filtering.
+Output
+The script generates two figures (Figure 1 and Figure 2) displaying the smoothed distribution of parameters A and B on the custom shape, respectively. The figures show the data as a heatmap overlaid with contour lines, providing visual insights into the parameter distributions.
+
+Additional Notes
+The script automatically removes duplicate (x, y) data points from the combined dataset to avoid interpolation/extrapolation issues.
+If the use_log_transform option is set to true, the data will be logarithmically transformed before visualization, enabling better visualization of a wide range of data values.
+Contributing
+Contributions to this repository are welcome! If you have suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
+
+Acknowledgments
+The MATLAB script and repository structure are provided for research purposes and data analysis exploration. Feel free to modify and use the code as per your requirements. If you use this code in any research or publication, please acknowledge the source and cite it appropriately.
