@@ -1,4 +1,5 @@
 clc; clear; close all
+load('arbitrary_dataset.mat')
 
 %% Combine both datasets
 x_combined = [x_1; x_2];
@@ -12,7 +13,7 @@ y_boundaries_combined = [y_boundaries_1; y_boundaries_2];
 % Choose the filter and adjust its parameters
 smoothing_options = {'Gaussian', 'Median', 'Mean', 'Bilateral', 'Savitzky-Golay'};
 selected_filter = 'Gaussian';  % Choose the filter here (e.g., 'Gaussian', 'Median', 'Mean', 'Bilateral', 'Savitzky-Golay')
-sigma_gaussian = 5;  % Adjust the sigma value for Gaussian filter
+sigma_gaussian = 30;  % Adjust the sigma value for Gaussian filter
 window_size_median = 5;  % Adjust the window size for Median filter
 window_size_mean = 5;  % Adjust the window size for Mean filter
 sigma_spatial_bilateral = 5;  % Adjust the spatial sigma value for Bilateral filter
@@ -105,13 +106,13 @@ if use_log_transform == true
     caxis([log10(overall_min_A), log10(overall_max_A)]); % Set the color axis to match the log-scale
     colormap(jet(num_colors)); % Specify the number of 'jet' colors
     colorbar('Ticks', log10(contour_range), 'TickLabels', num2str(contour_range', '%.2f'));
-    title('Logarithmic Extrapolated A on Custom Shape');
+%     title('Logarithmic Extrapolated A on Custom Shape');
 else
     pcolor(X_extrapolation_combined, Y_extrapolation_combined, Z_smoothed_combined);
     caxis([overall_min_A, overall_max_A]); % Set the color axis for the original data range
     colormap(jet(num_colors)); % Specify the number of 'jet' colors
     colorbar;
-    title('Extrapolated A on Custom Shape');
+%     title('Extrapolated A on Custom Shape');
 end
 
 shading interp;
@@ -127,9 +128,9 @@ ylim([min(y_boundaries_combined), max(y_boundaries_combined)]);
 axis equal;
 
 hold on;
-plot(x_boundaries_1, y_boundaries_1, '--');
-hold on;
-plot(x_boundaries_2, y_boundaries_2, '--');
+% plot(x_boundaries_1, y_boundaries_1, '--');
+% hold on;
+% plot(x_boundaries_2, y_boundaries_2, '--');
 
 % Draw the contour lines with the specified contour levels
 if use_log_transform == true
@@ -138,6 +139,14 @@ else
     contour(X_extrapolation_combined, Y_extrapolation_combined, Z_smoothed_combined, num_contours, 'LineColor', 'none');
 end
 
+% Adjust font and font size for the plot
+set(gca, 'FontName', 'Times New Roman', 'FontSize', 16);
+
+% Remove top and right axes
+box off;
+
+xlim([0 1200])
+ylim([0 1200])
 
 figure(2);
 if use_log_transform == true
@@ -146,13 +155,13 @@ if use_log_transform == true
     caxis([log10(overall_min_B), log10(overall_max_B)]); % Set the color axis to match the log-scale
     colormap(jet(num_colors)); % Specify the number of 'jet' colors
     colorbar('Ticks', log10(contour_range), 'TickLabels', num2str(contour_range', '%.2f'));
-    title('Logarithmic Extrapolated B on Custom Shape');
+%     title('Logarithmic Extrapolated B on Custom Shape');
 else
     pcolor(X_extrapolation_combined, Y_extrapolation_combined, Z1_smoothed_combined);
     caxis([overall_min_B, overall_max_B]); % Set the color axis for the original data range
     colormap(jet(num_colors)); % Specify the number of 'jet' colors
     colorbar;
-    title('Extrapolated B on Custom Shape');
+%     title('Extrapolated B on Custom Shape');
 end
 
 shading interp;
@@ -168,9 +177,9 @@ ylim([min(y_boundaries_combined), max(y_boundaries_combined)]);
 axis equal;
 
 hold on;
-plot(x_boundaries_1, y_boundaries_1, '--');
-hold on;
-plot(x_boundaries_2, y_boundaries_2, '--');
+% plot(x_boundaries_1, y_boundaries_1, '--');
+% hold on;
+% plot(x_boundaries_2, y_boundaries_2, '--');
 
 % Draw the contour lines with the specified contour levels
 if use_log_transform == true
@@ -178,3 +187,12 @@ if use_log_transform == true
 else
     contour(X_extrapolation_combined, Y_extrapolation_combined, Z1_smoothed_combined, num_contours, 'LineColor', 'none');
 end
+
+% Adjust font and font size for the plot
+set(gca, 'FontName', 'Times New Roman', 'FontSize', 16);
+
+% Remove top and right axes
+box off;
+
+xlim([0 1200])
+ylim([0 1200])
