@@ -46,17 +46,18 @@ Contributions to this repository are welcome! If you have suggestions, bug repor
 Acknowledgments
 The MATLAB script and repository structure are provided for research purposes and data analysis exploration. Feel free to modify and use the code as per your requirements. If you use this code in any research or publication, please acknowledge the source and cite it appropriately. This code has been developed with assistance from ChatGPT.
 
-Cite as
-Cranmer, K., & Kreiss, S. (2014). decouple software associated to arXiv:1401.0080. Zenodo. https://doi.org/10.5281/zenodo.8475
 
-BibTex export
-@software{cranmer_2014_8475,
-  author       = {Cranmer, Kyle and
-                  Kreiss, Sven},
-  title        = {decouple software associated to arXiv:1401.0080},
-  month        = mar,
-  year         = 2014,
+Cite as:
+Erfan Hamsayeh Abbasi Niasar. (2023). ef-hamsaye/contourplot: v0.0 (matlab). Zenodo. https://doi.org/10.5281/zenodo.8202684
+
+BibTex:
+@software{erfan_hamsayeh_abbasi_niasar_2023_8202684,
+  author       = {Erfan Hamsayeh Abbasi Niasar},
+  title        = {ef-hamsaye/contourplot: v0.0},
+  month        = aug,
+  year         = 2023,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.8475},
-  url          = {https://doi.org/10.5281/zenodo.8475}
+  version      = {matlab},
+  doi          = {10.5281/zenodo.8202684},
+  url          = {https://doi.org/10.5281/zenodo.8202684}
 }
